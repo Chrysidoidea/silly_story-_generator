@@ -42,14 +42,24 @@ function result() {
     newStory = newStory.replace('Bob', name);
   }
 
-//   if(document.getElementById("uk").checked) {
-//     const weight = Math.round(300);
-//     const temperature =  Math.round(94);
+  if(document.getElementById("uk").checked) {
+    let weight = Math.round(300);
+    let temperature =  Math.round(94);
 
-//   }
+    weight = (weight * 0.45359237);
+    temperature = ((temperature - 32) * 0.55555555555556);
+
+    newStory = newStory.replace('300', Math.round(weight));
+    newStory = newStory.replace('94', Math.round(temperature));
+    newStory = newStory.replace('fahrenheit', 'centigrade');
+    newStory = newStory.replace('pounds', 'stone');
+
+  }
+
    xItem = randomValueFromArray(insertX);
    yItem = randomValueFromArray(insertY);
    zItem = randomValueFromArray(insertZ);
+
   newStory = newStory.replace(':insertX:', xItem);
   newStory = newStory.replace(':insertX:', xItem);
   newStory = newStory.replace(':insertY:', yItem);
